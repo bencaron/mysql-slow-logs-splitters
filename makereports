@@ -1,0 +1,10 @@
+#!/bin/bash
+
+period=$1
+
+echo $period
+
+for type in lock number time
+do
+SlowQueryLogParser.rb logs/slow-log-$period.log $type > ./reports/$period-$type.txt
+done
